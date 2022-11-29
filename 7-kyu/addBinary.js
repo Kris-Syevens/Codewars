@@ -11,10 +11,10 @@ function addBinary(a, b) {
   let binaryStr = "";
   let sum = a + b;
 
-  for (let x = Math.trunc(Math.sqrt(a + b)); x >= 0; x--) {
-    if (sum - 2 ** x >= 0) {
+  for (let x = Math.floor(Math.sqrt(a + b)); x >= 0; x--) {
+    if (sum - Math.pow(2, x) >= 0) {
       binaryStr += "1";
-      sum -= 2 ** x;
+      sum -= Math.pow(2, x);
     } else {
       binaryStr += "0";
     }
@@ -23,6 +23,7 @@ function addBinary(a, b) {
   return binaryStr.substring(binaryStr.indexOf("1"), binaryStr.length);
 }
 
+// Test cases
 console.time("Execution Time");
 console.log(addBinary(1, 1)); // "10"
 console.log(addBinary(5, 9)); // "1110"
