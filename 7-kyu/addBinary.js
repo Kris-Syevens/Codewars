@@ -8,26 +8,36 @@
 // 5, 9 --> "1110" (5 + 9 = 14 in decimal or 1110 in binary)
 
 function addBinary(a, b) {
-  let binaryStr = "";
   let sum = a + b;
-
-  for (let x = Math.floor(Math.sqrt(a + b)); x >= 0; x--) {
-    if (sum - Math.pow(2, x) >= 0) {
-      binaryStr += "1";
-      sum -= Math.pow(2, x);
-    } else {
-      binaryStr += "0";
-    }
-  }
-
-  return binaryStr.substring(binaryStr.indexOf("1"), binaryStr.length);
+  return sum.toString(2);
 }
+
+// function addBinary(a, b) {
+//   let binaryStr = "";
+//   let sum = a + b;
+
+//   for (let x = Math.floor(Math.sqrt(a + b)); x >= 0; x--) {
+//     if (sum - Math.pow(2, x) >= 0) {
+//       binaryStr += "1";
+//       sum -= Math.pow(2, x);
+//     } else {
+//       binaryStr += "0";
+//     }
+//   }
+
+//   return binaryStr.substring(binaryStr.indexOf("1"), binaryStr.length);
+// }
 
 // Test cases
 console.time("Execution Time");
-console.log(addBinary(1, 1)); // "10"
-console.log(addBinary(5, 9)); // "1110"
-console.log(addBinary(51, 12)); // "111111"
+// console.log(addBinary(1, 1)); // "10"
+// console.log(addBinary(2, 3)); // "101"
+// // console.log(addBinary(5, 9)); // "1110"
+// // console.log(addBinary(51, 12)); // "111111"
+console.log(addBinary(689603687546259, 818828549890761)); //
+// console.log(addBinary(621268390729029, 354060301656060)); //
 console.timeEnd("Execution Time");
 
 // Code passes tests but isn't accepting as final submission to post due to time out on execution. Execution time being testing in console and doesn't appear to be issue. Codewars may have server disruption.
+
+// console.log(Math.sqrt(689603687546259 + 818828549890761)); //
